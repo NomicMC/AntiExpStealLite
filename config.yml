@@ -1,0 +1,4 @@
+# AntiExpStealLite by Nomic
+# Set min and max experience to give from exp bottle.
+expBottleGiveMin: 3
+expBottleGiveMax: 11

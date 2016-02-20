@@ -1,4 +1,4 @@
-package com.nomic.AntiExpStealLite;
+package com.nomic.LevelsLite;
 
 import java.util.Random;
 

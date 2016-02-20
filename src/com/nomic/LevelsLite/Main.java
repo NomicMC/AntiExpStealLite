@@ -1,4 +1,4 @@
-package com.nomic.AntiExpStealLite;
+package com.nomic.LevelsLite;
 
 import org.bukkit.plugin.PluginManager;
 import org.bukkit.plugin.java.JavaPlugin;

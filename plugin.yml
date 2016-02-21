@@ -1,3 +1,6 @@
 main: com.nomic.LevelsLite.Main
-version: 1.0.0
+version: 1.1.0
 name: LevelsLite
+commands:
+  levels:
+    description: Main plugin command.

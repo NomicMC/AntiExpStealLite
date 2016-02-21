@@ -8,6 +8,10 @@ public class Main extends JavaPlugin {
 	public void onEnable() {
 		registerEvents();
 	}
+	
+	public void registerCommands() {
+		getCommand("levels").setExecutor(new Cmd(this));
+	}
 
 	public void registerEvents() {
 		PluginManager pm = getServer().getPluginManager();

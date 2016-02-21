@@ -1,4 +1,8 @@
-# AntiExpStealLite by Nomic
-# Set min and max experience to give from exp bottle.
+# LevelsLite by Nomic
+# Set amount of experience to give from exp bottles.
+# Do not set min & max values to same value (exception is zero).
+# Setting min & max values to zero will disable exp bottles.
+# Min value must be above '0' and max value must be above '1'.
+# To set constant value, double max (ex: min = 2, max = 4, will give 2 exp).
 expBottleGiveMin: 3
 expBottleGiveMax: 11

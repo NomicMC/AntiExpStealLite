@@ -9,26 +9,28 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.ProjectileLaunchEvent;
 
 public class ExpBottle implements Listener {
-	
+
 	private Main plugin;
 
 	public ExpBottle(Main pl) {
 		plugin = pl;
 	}
-	
+
 	@EventHandler
-	   public void onEvent(ProjectileLaunchEvent e) {
-	     if(!(e.getEntity() instanceof ThrownExpBottle))
-	       return;
-	     ThrownExpBottle bottle = (ThrownExpBottle) e.getEntity();
-	     if(!(bottle.getShooter() instanceof Player))
-	       return;
-	     Player p = (Player) bottle.getShooter();
-	     int min = plugin.getConfig().getInt("expBottleGiveMin");
-	     int max = plugin.getConfig().getInt("expBottleGiveMax");
-	     if (p.hasPermission("levels.expbottle") || p.isOp()) {
-	     p.giveExp(min + new Random().nextInt(max - min));
-	     e.setCancelled(true);
-	   }
+	public void onEvent(ProjectileLaunchEvent e) {
+		if (!(e.getEntity() instanceof ThrownExpBottle))
+			return;
+		ThrownExpBottle bottle = (ThrownExpBottle) e.getEntity();
+		if (!(bottle.getShooter() instanceof Player))
+			return;
+		Player p = (Player) bottle.getShooter();
+		int min = plugin.getConfig().getInt("expBottleGiveMin");
+		int max = plugin.getConfig().getInt("expBottleGiveMax");
+		if (p.hasPermission("levels.expbottle") || p.isOp()) {
+			if (min > 0 && max > 1 && (min != max)) {
+				p.giveExp(min + new Random().nextInt(max - min));
+				e.setCancelled(true);
+			}
+		}
 	}
 }
